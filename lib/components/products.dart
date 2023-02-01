@@ -57,6 +57,7 @@ class _ProductsState extends State<Products> {
             productName: product_list[index]['nome'],
             productPicture: product_list[index]['imagem'],
             productPrice: product_list[index]['preco'],
+            productDescription: product_list[index]['descricao'],
           );
         });
   }
@@ -66,9 +67,14 @@ class SingleProduct extends StatelessWidget {
   final productName;
   final productPicture;
   final productPrice;
+  final productDescription;
 
   const SingleProduct(
-      {super.key, this.productName, this.productPicture, this.productPrice});
+      {super.key,
+      this.productName,
+      this.productPicture,
+      this.productPrice,
+      this.productDescription});
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +89,7 @@ class SingleProduct extends StatelessWidget {
                   productDetailName: productName,
                   productDetailPicture: productPicture,
                   productDetailPrice: productPrice,
+                  productDetailDescription: productDescription,
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:ecommerce/components/products.dart';
+import 'package:ecommerce/pages/cart.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,8 +25,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         title: Text("E-commerce"),
-        actions: const <Widget>[
-          IconButton(
+        actions: <Widget>[
+          const IconButton(
             onPressed: null,
             icon: Icon(
               Icons.search,
@@ -33,8 +34,11 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           IconButton(
-            onPressed: null,
-            icon: Icon(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Cart()));
+            },
+            icon: const Icon(
               Icons.shopping_cart,
               color: Colors.white,
             ),
